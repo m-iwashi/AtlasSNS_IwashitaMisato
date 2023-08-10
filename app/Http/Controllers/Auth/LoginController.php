@@ -41,14 +41,28 @@ class LoginController extends Controller
 
     public function login(Request $request){
         if($request->isMethod('post')){
+            //isMethod()で引数とHTTP動詞(ここではpost?)が一致するか判定
+            //postリクエストならpostを返す
+
 
             $data=$request->only('mail','password');
+            $request->session()->regenerate(); //セッションを再生成？
+            //セッション＝送ったデータを一時的にサーバ側に保存する機能
+
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと
             if(Auth::attempt($data)){
-                return redirect('/top');
+                return redirect('/top'); //topに戻る
+                //attemptメソッドでDBに該当ユーザーを照合Auth::attemptで条件分岐(attempt=試す)
             }
+
         }
+        //viewを表示してください(viewのauthフォルダのlogin.blade.php)階層構造の記載
+        return view("auth.login");
+    }
+
+    public function getLogout(){
+        Auth::logout();
         return view("auth.login");
     }
 }

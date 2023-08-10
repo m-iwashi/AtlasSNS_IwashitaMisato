@@ -12,22 +12,22 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('Users')->insert([
+        DB::table('users')->insert([
             ['username' => 'Atlas一郎',
             'mail' => 'hoge@test.mail',
-            'password' => Hash::make($password)],
+            'password' => bcrypt(12345678)],
             ['name' => 'Atlas二郎',
             'mail' => 'hoge@test.mail',
-            'password' => Hash::make($password)],
+            'password' => bcrypt(13579135)],
             ['name' => 'Atlas三郎',
             'mail' => 'hoge@test.mail',
-            'password' => Hash::make($password)],
+            'password' => bcrypt(24682468)],
             ['name' => 'Atlas四郎',
             'mail' => 'hoge@test.mail',
-            'password' => Hash::make($password)],
+            'password' => bcrypt(19283746)],
             ['name' => 'Atlas五郎',
             'mail' => 'hoge@test.mail',
-            'password' => Hash::make($password)]
+            'password' => bcrypt(98765432)]
         ]);
     }
 }

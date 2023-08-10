@@ -2,7 +2,8 @@
 
 @section('content')
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/〇〇']) !!}
+{!! Form::open(['url' => '/login']) !!}
+<!-- フォーム送信としては値を送るのは/loginへ？とりあえず/topでindex.blade.phpの表示は可能 -->
 
 <p>AtlasSNSへようこそ</p>
 
