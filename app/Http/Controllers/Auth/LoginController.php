@@ -34,9 +34,9 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct()//constructは必ず処理される
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('logout');//logoutと決めているためログアウトはその名前でないと機能しない。
     }
 
     public function login(Request $request){
@@ -61,8 +61,8 @@ class LoginController extends Controller
         return view("auth.login");
     }
 
-    public function getLogout(){
+    public function logout(){
         Auth::logout();
-        return view("auth.login");
+        return redirect('/login');
     }
 }

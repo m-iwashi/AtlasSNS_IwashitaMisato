@@ -51,6 +51,25 @@ class RegisterController extends Controller
                 'mail' => $mail,
                 'password' => bcrypt($password),
             ]);
+            //Requestインスタンスを経由記述？
+            //存在チェック
+            if ($request->session()->has('name')){
+
+            }
+            //セッションへ値を保存
+            $request->session()->put('key', 'value');
+            //'name'というセッションキーに'TEST'をセット
+            $request->session()->put('name', 'TEST');
+            //フォームからのname属性をセッションに保存場合
+            $request->session()->put('name', $request->input('name'));
+            //セッション「name」の値を読み込み。
+            $name = $request->session()->get('name');
+            //セッションの値全てを取得
+            $data = $request->session()->all();
+            //指定アイテム削除
+            $request->session()->forget('key');
+            //全削除
+            $request->session()->flush();
 
             return redirect('added');
         }

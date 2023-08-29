@@ -8,6 +8,23 @@ header{
     background:#186AC9;
 }
 
+/* ハンバーガメニューを実装しようとした時の途中作業 */
+.line span:nth-child{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 10px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    transform: rotate(45deg);
+}
+
+.line.active span:nth-chile {
+    transform: rotate(-90deg);
+}
+
+
+
 /* main content */
 #row{
     display: flex;

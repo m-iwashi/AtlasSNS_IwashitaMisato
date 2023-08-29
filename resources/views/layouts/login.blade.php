@@ -27,11 +27,16 @@
                 <div id="">
                     <p>〇〇さん<img src="images/arrow.png"></p>
                 <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
+                <button type="button" class="menu-btn">
+                  <span class="line"></span>
+                </button>
+                <nav class="menu">
+                  <ul>
+                      <li><a href="/top">ホーム</a></li>
+                      <li><a href="/profile">プロフィール</a></li>
+                      <li><a href="/logout">ログアウト</a></li>
+                  </ul>
+                </nav>
             </div>
         </div>
     </header>

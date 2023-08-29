@@ -42,4 +42,4 @@ Route::get('/search','UsersController@search'); //?
 Route::get('/follow-list','FollowsController@followList');//?
 Route::get('/follower-list','FollowsController@followerList');//?
 
-Route::get('/logout', 'Auth\LoginController@getLogout');//?
+Route::get('/logout', 'Auth\LoginController@logout');//?
